@@ -1,6 +1,6 @@
 {
   "name": "WPS-Profileregistry",
   "tagline": "Registry for WPS 2.0 profiles",
-  "body": "# wps-profileregistry\r\nRegistry for WPS 2.0 profiles\r\n",
+  "body": "# wps-profileregistry\r\nRegistry for WPS 2.0 profiles\r\n\r\n# Profiles:\r\n* Generalization Process Concept: http://52north.github.io/wps-profileregistry/concept/generalization.adoc\r\n",
   "note": "Don't delete this file! It's used internally to help with page regeneration."
 }
