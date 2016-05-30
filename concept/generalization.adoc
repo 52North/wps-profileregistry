@@ -1,0 +1,38 @@
+== Cartographic generalization
+[quote,Wikipedia, https://en.wikipedia.org/wiki/Cartographic_generalization]
+____
+
+Cartographic generalization, or map generalization, is the method whereby information is selected and represented on a map in a way that adapts to the scale of the display medium of the map, not necessarily preserving all intricate geographical or other cartographic details. The cartographer is given license to adjust the content within their maps to create a suitable and useful map that conveys geospatial information, while striking the right balance between the map's purpose and actuality of the subject being mapped. Scaling hierarchy or far smaller than larger ones is found to be a universal rule for cartographic generalization (1).
+
+Well generalized maps are those that emphasize the most important map elements while still representing the world in the most faithful and recognizable way. The level of detail and importance in what is remaining on the map must outweigh the insignificance of items that were generalized, as to preserve the distinguishing characteristics of what makes the map useful and important.
+
+Methods
+
+Some cartographic generalization methods include the following:
+
+Selection
+
+Map generalization is designed to reduce the complexities of the real world by strategically reducing ancillary and unnecessary details. One way that geospatial data can be reduced is through the selection process. The cartographer can select and retain certain elements that he/she deems the most necessary or appropriate. In this method, the most important elements stand out while lesser elements are left out entirely. For example, a directional map between two points may have lesser and un-traveled roadways omitted as not to confuse the map-reader. The selection of the most direct and uncomplicated route between the two points is the most important data, and the cartographer may choose to emphasize this.
+
+Simplification
+
+Generalization is not a process that only removes and selects data, but also a process that simplifies it as well. Simplification is a technique where shapes of retained features are altered to enhance visibility and reduce complexity. Smaller scale maps have more simplified features than larger scale maps because they simply exhibit more area. An example of simplification is to scale and remove points along an area. Doing this to a mountain would reduce the detail in and around the mountain but would ideally not detract from the map reader interpreting the feature as such a mountain.
+
+Combination
+
+Simplification also takes on other roles when considering the role of combination. Overall data reduction techniques can also mean that in addition to generalizing elements of particular features, features can also be combined when their separation is irrelevant to the map focus. A mountain chain may be isolated into several smaller ridges and peaks with intermittent forest in the natural environment, but shown as a continuous chain on the map, as determined by scale. The map reader has to, again remember, that because of scale limitations combined elements are not concise depictions of natural or manmade features.
+
+Smoothing
+
+Smoothing is also a process that the map maker can employ to reduce the angularity of line work. Smoothing is yet another way of simplifying the map features, but involves several other characteristics of generalization that lead into feature displacement and locational shifting. The purpose of smoothing is to exhibit linework in a much less complicated and a less visually jarring way. An example of smoothing would be for a jagged roadway, cut through a mountain, to be smoothed out so that the angular turns and transitions appear much more fluid and natural.
+
+Enhancement
+
+Enhancement is also a method that can be employed by the cartographer to illuminate specific elements that aid in map reading. As many of the aforementioned generalizing methods focus on the reduction and omission of detail, the enhancement method concentrates on the addition of detail. Enhancement can be used to show the true character of the feature being represented and is often used by the cartographer to highlight specific details about his or her specific knowledge, that would otherwise be left out. An example includes enhancing the detail about specific river rapids so that the map reader may know the facets of traversing the most difficult sections beforehand. Enhancement can be a valuable tool in aiding the map reader to elements that carry significant weight to the map’s intent.
+
+Displacement
+
+Displacement can be employed when 2 objects are so close to each other that they would overlap at smaller scales. A common place where this would occur is the cities Brazzaville and Kinshasa on either side of the Congo river in Africa. They are both the capital city of their country and on overview maps they would be displayed with a slightly larger symbol than other cities. Depending on the scale of the map the symbols would overlap. By displacing both of them away from the river (and away from their true location) the symbol overlap can be avoided. Another common case is when a road and a railroad run parallel to each other.
+____
+
+(1) Jiang, B. Liu, X. & Jia, T. (2013). Scaling of geographic space as a universal rule for map generalization. Annals of the Association of American Geographers, 4, 844-855.
