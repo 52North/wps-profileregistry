@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wps:GenericProcess
+	xmlns:ows="http://www.opengis.net/ows/2.0"
+	xmlns:wps="http://www.opengis.net/wps/2.0"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.opengis.net/wps/2.0 http://schemas.opengis.net/wps/2.0/wps.xsd">
+	
+	<ows:Title>Conflation process</ows:Title>
+	<ows:Identifier>http://52north.github.io/wps-profileregistry/generic/conflation.xml</ows:Identifier>
+	<ows:Metadata xlink:role="http://www.opengis.net/spec/wps/2.0/def/process-profile/concept" xlink:href="http://52north.github.io/wps-profileregistry/concept/conflation"/>
+	
+	<!-- Returns a geometry that represents all points whose distance from
+		this Geometry is less than or equal to distance. Calculations are performed on the earth ellipsoid Geometry's spatial reference system. -->
+	<ows:Metadata xlink:role="http://www.opengis.net/spec/wps/2.0/def/process/description/documentation" xlink:href="http://52north.github.io/wps-profileregistry/generic/conflation.html"/>
+	
+	<wps:Input>
+		<ows:Title>Conflation Input 1</ows:Title>
+		<ows:Identifier>INPUT1</ows:Identifier>
+		<ows:Metadata xlink:role="http://www.opengis.net/spec/wps/2.0/def/process/description/documentation" xlink:href="http://52north.github.io/wps-profileregistry/generic/conflation.html#input1"/>
+	</wps:Input>
+	<wps:Input>
+		<ows:Title>Conflation Input 2</ows:Title>
+		<ows:Identifier>INPUT2</ows:Identifier>
+		<ows:Metadata xlink:role="http://www.opengis.net/spec/wps/2.0/def/process/description/documentation" xlink:href="http://52north.github.io/wps-profileregistry/generic/conflation.html#input2"/>
+	</wps:Input>
+	<wps:Input>
+		<ows:Title>Reference layer</ows:Title>
+		<ows:Identifier><pre>REFERENCE_LAYER</pre></ows:Identifier>
+		<ows:Metadata xlink:role="http://www.opengis.net/spec/wps/2.0/def/process/description/documentation" xlink:href="http://52north.github.io/wps-profileregistry/generic/conflation.html#reference_layer"/>
+	</wps:Input>
+	<wps:Output>
+		<ows:Title>Conflation output</ows:Title>
+		<ows:Identifier>CONFLATION_OUTPUT</ows:Identifier>
+		<ows:Metadata xlink:role="http://www.opengis.net/spec/wps/2.0/def/process/description/documentation" xlink:href="http://52north.github.io/wps-profileregistry/generic/conflation.html#conflation_output"/>
+	</wps:Output>
+	
+</wps:GenericProcess>

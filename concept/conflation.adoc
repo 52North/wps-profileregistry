@@ -1,0 +1,10 @@
+= Conflation (GIS)
+
+The following text is just a placeholder and will be rewritten.
+
+[quote, "Longley, Paul A. et al (2001). Geographic Information Systems and Science. Wiley and Sons."]
+____
+
+"[i]n GIS, conflation is defined as the process of combining geographic information from overlapping sources so as to retain accurate data, minimize redundancy, and reconcile data conflicts."
+____
+

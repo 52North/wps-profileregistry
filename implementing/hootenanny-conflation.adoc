@@ -1,0 +1,33 @@
+=== Hootenanny Conflation Process
+
+This process makes use of the Hootenanny Conflation software as a backend to offer conflation processes.
+
+== Inputs
+
+=== input1
+The first conflation dataset. 
+
+=== input2
+The second conflation dataset. 
+
+=== conflation_type
+The type of conflation, either average or reference.
+
+=== match threshold
+The threshold for calling a relationship a match. Defaults to 0.6. The higher the value the lower the TPR, but likely also the lower the FPR
+
+=== miss_threshold
+The threshold for calling a relationship a miss. Defaults to 0.6. The higher the value the lower the TNR, but likely also the lower the FNR.
+
+=== reference_layer
+The reference layer which will be dominant tags. Default is 1 and if 2 selected, layer 2 tags will be dominant with layer 1 as geometry snap layer.
+
+== Outputs
+
+=== conflation_output
+
+The conflated dataset.
+
+=== conflation_report
+
+A log of the conflation execution.

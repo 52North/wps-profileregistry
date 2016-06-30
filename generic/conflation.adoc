@@ -1,0 +1,20 @@
+= Generic Conflation Process
+
+Generic conflation uses two input datasets to produce a conflated result. The first input dataset is used as reference layer by default.
+
+== Inputs
+
+=== input1
+The first conflation dataset. 
+
+=== input2
+The second conflation dataset. 
+
+=== reference_layer
+The reference layer which will be dominant tags. Default is 1 and if 2 selected, layer 2 tags will be dominant with layer 1 as geometry snap layer.
+
+== Outputs
+
+=== conflation_output
+
+The conflated dataset.
