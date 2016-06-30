@@ -1,5 +1,5 @@
 === Douglas Peucker Line Simplification
-The line-features are simplyfied by a tolerance. The algorithm does not preserve topology.
+The line-features are simplified by a tolerance. The algorithm does not preserve topology.
 
 [source,java]
 ----
@@ -44,4 +44,4 @@ The features that should be simplified. The data-format should be zipped shapefi
 
 === result
 
-The simplyfied features. The data-format should be zipped shapefile, optionally encoded in base64.
+The simplified features. The data-format should be zipped shapefile, optionally encoded in base64.
