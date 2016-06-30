@@ -1,4 +1,7 @@
 == Cartographic generalization
+
+The following text is just a placeholder and will be rewritten.
+
 [quote,Wikipedia, https://en.wikipedia.org/wiki/Cartographic_generalization]
 ____
 
