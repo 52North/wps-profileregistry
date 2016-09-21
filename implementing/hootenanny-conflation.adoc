@@ -13,7 +13,7 @@ The second conflation dataset.
 === conflation_type
 The type of conflation, either average or reference.
 
-=== match threshold
+=== match_threshold
 The threshold for calling a relationship a match. Defaults to 0.6. The higher the value the lower the TPR, but likely also the lower the FPR
 
 === miss_threshold
