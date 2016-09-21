@@ -1,0 +1,19 @@
+=== Line generalization
+The line-features are simplified by a tolerance. The algorithm optionally preserves the topology of the input features.
+
+== Inputs
+
+=== data
+The line-features that should be simplified. 
+
+=== tolerance
+The tolerance for the line generalization.
+
+=== preserve_topology
+Whether the algorithm should preserve the topology of the input features.
+
+== Outputs
+
+=== result
+
+The simplified features.
