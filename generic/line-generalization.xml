@@ -11,21 +11,21 @@
       <wps:Input minOccurs="1" maxOccurs="1">
         <ows:Title>data</ows:Title>
         <ows:Identifier>data</ows:Identifier>
-        <ows:Metadata xlink:role="http://www.opengis.net/spec/wps/2.0/def/process/description/documentation" xlink:href="http://52north.github.io/wps-profileregistry/implementing/line-generalization.html#data"/>
+        <ows:Metadata xlink:role="http://www.opengis.net/spec/wps/2.0/def/process/description/documentation" xlink:href="http://52north.github.io/wps-profileregistry/generic/line-generalization.html#data"/>
       </wps:Input>
       <wps:Input minOccurs="1" maxOccurs="1">
         <ows:Title>tolerance</ows:Title>
         <ows:Identifier>tolerance</ows:Identifier>
-        <ows:Metadata xlink:role="http://www.opengis.net/spec/wps/2.0/def/process/description/documentation" xlink:href="http://52north.github.io/wps-profileregistry/implementing/line-generalization.html#tolerance"/>
+        <ows:Metadata xlink:role="http://www.opengis.net/spec/wps/2.0/def/process/description/documentation" xlink:href="http://52north.github.io/wps-profileregistry/generic/line-generalization.html#tolerance"/>
       </wps:Input>
       <wps:Input minOccurs="1" maxOccurs="1">
         <ows:Title>preserve_topology</ows:Title>
         <ows:Identifier>preserve_topology</ows:Identifier>
-        <ows:Metadata xlink:role="http://www.opengis.net/spec/wps/2.0/def/process/description/documentation" xlink:href="http://52north.github.io/wps-profileregistry/implementing/line-generalization.html#preserve_topology"/>
+        <ows:Metadata xlink:role="http://www.opengis.net/spec/wps/2.0/def/process/description/documentation" xlink:href="http://52north.github.io/wps-profileregistry/generic/line-generalization.html#preserve_topology"/>
       </wps:Input>
       <wps:Output>
         <ows:Title>result</ows:Title>
         <ows:Identifier>result</ows:Identifier>
-        <ows:Metadata xlink:role="http://www.opengis.net/spec/wps/2.0/def/process/description/documentation" xlink:href="http://52north.github.io/wps-profileregistry/implementing/line-generalization.html#result"/>
+        <ows:Metadata xlink:role="http://www.opengis.net/spec/wps/2.0/def/process/description/documentation" xlink:href="http://52north.github.io/wps-profileregistry/generic/line-generalization.html#result"/>
       </wps:Output>
 </wps:GenericProcess>
