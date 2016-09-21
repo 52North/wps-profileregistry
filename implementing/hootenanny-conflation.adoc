@@ -7,6 +7,9 @@ This process makes use of the Hootenanny Conflation software as a backend to off
 === input1
 The first conflation dataset. 
 
+=== input1_translation
+Translation file for conflation input 1. 
+
 === input2
 The second conflation dataset. 
 
