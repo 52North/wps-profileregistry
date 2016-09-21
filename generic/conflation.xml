@@ -9,9 +9,7 @@
 	<ows:Title>Conflation process</ows:Title>
 	<ows:Identifier>http://52north.github.io/wps-profileregistry/generic/conflation.xml</ows:Identifier>
 	<ows:Metadata xlink:role="http://www.opengis.net/spec/wps/2.0/def/process-profile/concept" xlink:href="http://52north.github.io/wps-profileregistry/concept/conflation"/>
-	
-	<!-- Returns a geometry that represents all points whose distance from
-		this Geometry is less than or equal to distance. Calculations are performed on the earth ellipsoid Geometry's spatial reference system. -->
+
 	<ows:Metadata xlink:role="http://www.opengis.net/spec/wps/2.0/def/process/description/documentation" xlink:href="http://52north.github.io/wps-profileregistry/generic/conflation.html"/>
 	
 	<wps:Input>
