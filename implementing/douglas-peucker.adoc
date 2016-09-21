@@ -1,5 +1,5 @@
 === Douglas Peucker Line Simplification
-The line-features are simplified by a tolerance. The algorithm does not preserve topology.
+The line-features are simplified by a tolerance. The algorithm optionally preserves the topology of the input features..
 
 [source,java]
 ----
@@ -33,12 +33,16 @@ end
 
 == Inputs
 
+=== data
+The features that should be simplified. The data-format should be zipped shapefile, optionally encoded in base64.
+
 === tolerance
 The tolerance for the douglas peucker algorithm.
 This should be a double value.
 
-=== features
-The features that should be simplified. The data-format should be zipped shapefile, optionally encoded in base64.
+=== preserve_topology
+Whether the algorithm should preserve the topology of the input features.
+This should be a boolean value.
 
 == Outputs
 
