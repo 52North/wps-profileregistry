@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wps:GenericProcess
+	xmlns:ows="http://www.opengis.net/ows/2.0"
+	xmlns:wps="http://www.opengis.net/wps/2.0"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.opengis.net/wps/2.0 http://schemas.opengis.net/wps/2.0/wps.xsd">
+      <ows:Title>Area removal by size</ows:Title>
+      <ows:Identifier>http://52north.github.io/wps-profileregistry/generic/area-removal-by-size.xml</ows:Identifier>
+      <ows:Metadata xlink:role="http://www.opengis.net/spec/wps/2.0/def/process-profile/concept" xlink:href="http://52north.github.io/wps-profileregistry/concept/generalization.html"/>
+      <wps:Input minOccurs="1" maxOccurs="1">
+        <ows:Title>data</ows:Title>
+        <ows:Identifier>data</ows:Identifier>
+        <ows:Metadata xlink:role="http://www.opengis.net/spec/wps/2.0/def/process/description/documentation" xlink:href="http://52north.github.io/wps-profileregistry/generic/area-removal-by-size.html#data"/>
+      </wps:Input>
+      <wps:Input minOccurs="1" maxOccurs="1">
+        <ows:Title>minSize</ows:Title>
+        <ows:Identifier>minSize</ows:Identifier>
+        <ows:Metadata xlink:role="http://www.opengis.net/spec/wps/2.0/def/process/description/documentation" xlink:href="http://52north.github.io/wps-profileregistry/generic/line-generalization.html#minSize"/>
+      </wps:Input>
+      <wps:Output>
+        <ows:Title>result</ows:Title>
+        <ows:Identifier>result</ows:Identifier>
+        <ows:Metadata xlink:role="http://www.opengis.net/spec/wps/2.0/def/process/description/documentation" xlink:href="http://52north.github.io/wps-profileregistry/generic/line-generalization.html#result"/>
+      </wps:Output>
+</wps:GenericProcess>

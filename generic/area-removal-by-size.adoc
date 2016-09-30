@@ -1,0 +1,16 @@
+== Area generalization
+The polygon-features are simplified by a minimum size.
+
+== Inputs
+
+=== data
+The polygon-features that should be simplified. 
+
+=== minSize
+The minimum size of features that should be kept in the result dataset.
+
+== Outputs
+
+=== result
+
+The simplified features.
