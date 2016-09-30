@@ -1,0 +1,76 @@
+=== DouglasPeucker Line generalization
+The line-features are simplified by a tolerance. The algorithm optionally preserves the topology of the input features.
+
+.Java-based DouglasPeuker line generalization algorithmfootnote:[source https://en.wikipedia.org/wiki/Ramer%E2%80%93Douglas%E2%80%93Peucker_algorithm] 
+[source, java]
+----
+
+function DouglasPeucker(PointList[], epsilon)
+
+    // Find the point with the maximum distance
+
+    dmax = 0
+
+    index = 0
+
+    end = length(PointList)
+
+    for i = 2 to ( end - 1) {
+
+        d = perpendicularDistance(PointList[i], Line(PointList[1], PointList[end]))
+
+        if ( d > dmax ) {
+
+            index = i
+
+            dmax = d
+
+        }
+
+    }
+
+    // If max distance is greater than epsilon, recursively simplify
+
+    if ( dmax > epsilon ) {
+
+        // Recursive call
+
+        recResults1[] = DouglasPeucker(PointList[1...index], epsilon)
+
+        recResults2[] = DouglasPeucker(PointList[index...end], epsilon)
+
+
+
+        // Build the result list
+
+        ResultList[] = {recResults1[1...length(recResults1)-1], recResults2[1...length(recResults2)]}
+
+    } else {
+
+        ResultList[] = {PointList[1], PointList[end]}
+
+    }
+
+    // Return the result
+
+    return ResultList[]
+
+end
+----
+
+== Inputs
+
+=== data
+The line-features that should be simplified. 
+
+=== tolerance
+The tolerance for the line generalization.
+
+=== preserve_topology
+Whether the algorithm should preserve the topology of the input features.
+
+== Outputs
+
+=== result
+
+The simplified features.
