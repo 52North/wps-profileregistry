@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wps:ProcessOfferings xmlns:wps="http://www.opengis.net/wps/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ows="http://www.opengis.net/ows/2.0" xmlns:xlin="http://www.w3.org/1999/xlink" xsi:schemaLocation="http://www.opengis.net/wps/2.0 http://schemas.opengis.net/wps/2.0/wps.xsd">
+  <wps:ProcessOffering processVersion="1.0.0" jobControlOptions="sync-execute async-execute" outputTransmission="value reference">
+    <wps:Process>
+      <ows:Title>Hootenanny Conflation Process implementation profile</ows:Title>
+      <ows:Identifier>http://52north.github.io/wps-profileregistry/implementing/hootenanny-conflation</ows:Identifier>
+      <ows:Metadata xlin:role="http://www.opengis.net/spec/wps/2.0/def/process-profile/concept" xlin:href="http://52north.github.io/wps-profileregistry/concept/conflation"/>
+      <ows:Metadata xlin:role="http://www.opengis.net/spec/wps/2.0/def/process-profile/generic" xlin:href="http://52north.github.io/wps-profileregistry/generic/conflation"/>
+      <ows:Metadata xlin:role="http://www.opengis.net/spec/wps/2.0/def/process/description/documentation" xlin:href="http://52north.github.io/wps-profileregistry/implementing/hootenanny-conflation"/>
+      <wps:Input minOccurs="1" maxOccurs="1">
+        <ows:Title>INPUT1</ows:Title>
+        <ows:Abstract>Conflation input 1</ows:Abstract>
+        <ows:Identifier>INPUT1</ows:Identifier>
+        <ows:Metadata xlin:role="http://www.opengis.net/spec/wps/2.0/def/process/description/documentation" xlin:href="http://52north.github.io/wps-profileregistry/implementing/hootenanny-conflation#input1"/>
+        <wps:ComplexData xmlns:ns="http://www.opengis.net/wps/2.0">
+          <ns:Format default="true" mimeType="application/x-zipped-shp"/>
+          <ns:Format mimeType="application/x-openstreetmap+xml"/>
+          <ns:Format mimeType="application/x-zipped-shp" encoding="base64"/>
+          <ns:Format mimeType="application/x-zipped-gdb"/>
+          <ns:Format mimeType="application/x-zipped-gdb" encoding="base64"/>
+        </wps:ComplexData>
+      </wps:Input>
+      <wps:Input minOccurs="0" maxOccurs="1">
+        <ows:Title>INPUT1_TRANSLATION</ows:Title>
+        <ows:Abstract>Translation file for conflation input 1</ows:Abstract>
+        <ows:Identifier>INPUT1_TRANSLATION</ows:Identifier>
+        <ows:Metadata xlin:role="http://www.opengis.net/spec/wps/2.0/def/process/description/documentation" xlin:href="http://52north.github.io/wps-profileregistry/implementing/hootenanny-conflation#input1_translation"/>
+        <wps:ComplexData xmlns:ns="http://www.opengis.net/wps/2.0">
+          <ns:Format default="true" mimeType="text/x-script.phyton"/>
+          <ns:Format mimeType="text/plain"/>
+        </wps:ComplexData>
+      </wps:Input>
+      <wps:Input minOccurs="1" maxOccurs="1">
+        <ows:Title>INPUT2</ows:Title>
+        <ows:Abstract>Conflation input 2</ows:Abstract>
+        <ows:Identifier>INPUT2</ows:Identifier>
+        <ows:Metadata xlin:role="http://www.opengis.net/spec/wps/2.0/def/process/description/documentation" xlin:href="http://52north.github.io/wps-profileregistry/implementing/hootenanny-conflation#input2"/>
+        <wps:ComplexData xmlns:ns="http://www.opengis.net/wps/2.0">
+          <ns:Format default="true" mimeType="application/x-openstreetmap+xml"/>
+          <ns:Format mimeType="text/xml"/>
+          <ns:Format mimeType="application/x-zipped-shp"/>
+          <ns:Format mimeType="application/x-zipped-shp" encoding="base64"/>
+          <ns:Format mimeType="application/x-zipped-gdb"/>
+          <ns:Format mimeType="application/x-zipped-gdb" encoding="base64"/>
+        </wps:ComplexData>
+      </wps:Input>
+      <wps:Input minOccurs="0" maxOccurs="1">
+        <ows:Title>CONFLATION_TYPE</ows:Title>
+        <ows:Identifier>CONFLATION_TYPE</ows:Identifier>
+        <ows:Metadata xlin:role="http://www.opengis.net/spec/wps/2.0/def/process/description/documentation" xlin:href="http://52north.github.io/wps-profileregistry/implementing/hootenanny-conflation#conflation_type"/>
+        <wps:LiteralData xmlns:ns="http://www.opengis.net/wps/2.0">
+          <ns:Format default="true" mimeType="text/plain"/>
+          <ns:Format mimeType="text/xml"/>
+          <LiteralDataDomain>
+            <ows:AllowedValues>
+              <ows:Value>average</ows:Value>
+              <ows:Value>reference</ows:Value>
+            </ows:AllowedValues>
+            <ows:DataType ows:reference="xs:string"/>
+          </LiteralDataDomain>
+        </wps:LiteralData>
+      </wps:Input>
+      <wps:Input minOccurs="0" maxOccurs="1">
+        <ows:Title>MATCH_THRESHOLD</ows:Title>
+        <ows:Abstract>The threshold for calling a relationship a match. Defaults to 0.6. The higher the value the lower the TPR, but likely also the lower the FPR.</ows:Abstract>
+        <ows:Identifier>MATCH_THRESHOLD</ows:Identifier>
+        <ows:Metadata xlin:role="http://www.opengis.net/spec/wps/2.0/def/process/description/documentation" xlin:href="http://52north.github.io/wps-profileregistry/implementing/hootenanny-conflation#miss_threshold"/>
+        <wps:LiteralData xmlns:ns="http://www.opengis.net/wps/2.0">
+          <ns:Format default="true" mimeType="text/plain"/>
+          <ns:Format mimeType="text/xml"/>
+          <LiteralDataDomain>
+            <ows:AnyValue/>
+            <ows:DataType ows:reference="xs:double"/>
+            <ows:DefaultValue>0.6</ows:DefaultValue>
+          </LiteralDataDomain>
+        </wps:LiteralData>
+      </wps:Input>
+      <wps:Input minOccurs="0" maxOccurs="1">
+        <ows:Title>MISS_THRESHOLD</ows:Title>
+        <ows:Abstract>The threshold for calling a relationship a miss. Defaults to 0.6. The higher the value the lower the TNR, but likely also the lower the FNR.</ows:Abstract>
+        <ows:Identifier>MISS_THRESHOLD</ows:Identifier>
+        <ows:Metadata xlin:role="http://www.opengis.net/spec/wps/2.0/def/process/description/documentation" xlin:href="http://52north.github.io/wps-profileregistry/implementing/hootenanny-conflation#match_threshold"/>
+        <wps:LiteralData xmlns:ns="http://www.opengis.net/wps/2.0">
+          <ns:Format default="true" mimeType="text/plain"/>
+          <ns:Format mimeType="text/xml"/>
+          <LiteralDataDomain>
+            <ows:AnyValue/>
+            <ows:DataType ows:reference="xs:double"/>
+            <ows:DefaultValue>0.6</ows:DefaultValue>
+          </LiteralDataDomain>
+        </wps:LiteralData>
+      </wps:Input>
+      <wps:Input minOccurs="0" maxOccurs="1">
+        <ows:Title>REFERENCE_LAYER</ows:Title>
+        <ows:Abstract>The reference layer which will be dominant tags. Default is 1 and if 2 selected, layer 2 tags will be dominant with layer 1 as geometry snap layer.</ows:Abstract>
+        <ows:Identifier>REFERENCE_LAYER</ows:Identifier>
+        <ows:Metadata xlin:role="http://www.opengis.net/spec/wps/2.0/def/process/description/documentation" xlin:href="http://52north.github.io/wps-profileregistry/implementing/hootenanny-conflation#reference_layer"/>
+        <wps:LiteralData xmlns:ns="http://www.opengis.net/wps/2.0">
+          <ns:Format default="true" mimeType="text/plain"/>
+          <ns:Format mimeType="text/xml"/>
+          <LiteralDataDomain>
+            <ows:AllowedValues>
+              <ows:Value>1</ows:Value>
+              <ows:Value>2</ows:Value>
+            </ows:AllowedValues>
+            <ows:DataType ows:reference="xs:integer"/>
+            <ows:DefaultValue>1</ows:DefaultValue>
+          </LiteralDataDomain>
+        </wps:LiteralData>
+      </wps:Input>
+      <wps:Output>
+        <ows:Title>CONFLATION_OUTPUT</ows:Title>
+        <ows:Identifier>CONFLATION_OUTPUT</ows:Identifier>
+        <ows:Metadata xlin:role="http://www.opengis.net/spec/wps/2.0/def/process/description/documentation" xlin:href="http://52north.github.io/wps-profileregistry/implementing/hootenanny-conflation#conflation_output"/>
+        <wps:ComplexData xmlns:ns="http://www.opengis.net/wps/2.0">
+          <ns:Format default="true" mimeType="application/x-zipped-shp"/>
+          <ns:Format mimeType="application/x-zipped-shp" encoding="base64"/>
+          <ns:Format mimeType="application/x-zipped-gdb"/>
+          <ns:Format mimeType="text/xml" schema="http://schemas.opengis.net/gml/3.1.1/base/feature.xsd"/>
+          <ns:Format mimeType="application/vnd.geo+json"/>
+        </wps:ComplexData>
+      </wps:Output>
+      <wps:Output>
+        <ows:Title>CONFLATION_REPORT</ows:Title>
+        <ows:Identifier>CONFLATION_REPORT</ows:Identifier>
+        <ows:Metadata xlin:role="http://www.opengis.net/spec/wps/2.0/def/process/description/documentation" xlin:href="http://52north.github.io/wps-profileregistry/implementing/hootenanny-conflation#conflation_report"/>
+        <wps:ComplexData xmlns:ns="http://www.opengis.net/wps/2.0">
+          <ns:Format default="true" mimeType="text/plain"/>
+        </wps:ComplexData>
+      </wps:Output>
+    </wps:Process>
+  </wps:ProcessOffering>
+</wps:ProcessOfferings>
