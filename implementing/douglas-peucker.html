@@ -425,37 +425,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sect2">
 <h1 id="douglas-peucker-line-simplification"><a class="anchor" href="#douglas-peucker-line-simplification"></a>Douglas Peucker Line Simplification</h1>
 <div class="paragraph">
-<p>The line-features are simplified by a tolerance. The algorithm optionally preserves the topology of the input features..</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-java" data-lang="java">function DouglasPeucker(PointList[], epsilon)
-    // Find the point with the maximum distance
-    dmax = 0
-    index = 0
-    end = length(PointList)
-    for i = 2 to ( end - 1) {
-        d = perpendicularDistance(PointList[i], Line(PointList[1], PointList[end]))
-        if ( d &gt; dmax ) {
-            index = i
-            dmax = d
-        }
-    }
-    // If max distance is greater than epsilon, recursively simplify
-    if ( dmax &gt; epsilon ) {
-        // Recursive call
-        recResults1[] = DouglasPeucker(PointList[1...index], epsilon)
-        recResults2[] = DouglasPeucker(PointList[index...end], epsilon)
-
-        // Build the result list
-        ResultList[] = {recResults1[1...length(recResults1)-1], recResults2[1...length(recResults2)]}
-    } else {
-        ResultList[] = {PointList[1], PointList[end]}
-    }
-    // Return the result
-    return ResultList[]
-end</code></pre>
-</div>
+<p>The line-features are simplified by a tolerance. The algorithm optionally preserves the topology of the input features. The process is based on the Java Topology Suite (JTS<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnote_1" title="View footnote.">1</a>]</sup>) implementation of the DouglasPeucker algorithm.</p>
 </div>
 </div>
 <div class="sect1">
@@ -495,9 +465,15 @@ This should be a boolean value.</p><b></b>
 </div>
 </div>
 </div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnote_1">
+<a href="#_footnoteref_1">1</a>. <a href="http://tsusiatsoftware.net/jts/main.html" class="bare">http://tsusiatsoftware.net/jts/main.html</a>
+</div>
+</div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2016-09-21 10:48:58 MS
+Last updated 2016-09-30 14:43:05 MS
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/github.min.css">
