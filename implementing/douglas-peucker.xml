@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wps:ProcessOfferings xmlns:wps="http://www.opengis.net/wps/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ows="http://www.opengis.net/ows/2.0" xmlns:xlin="http://www.w3.org/1999/xlink" xsi:schemaLocation="http://www.opengis.net/wps/2.0 http://schemas.opengis.net/wps/2.0/wps.xsd">
+  <wps:ProcessOffering processVersion="1.0.0" jobControlOptions="sync-execute async-execute" outputTransmission="value reference">
+    <wps:Process>
+      <ows:Title>DouglasPeucker Algorithm Implementation Profile</ows:Title>
+      <ows:Identifier>http://52north.github.io/wps-profileregistry/implementing/douglas-peucker</ows:Identifier>
+      <ows:Metadata xlin:role="http://www.opengis.net/spec/wps/2.0/def/process-profile/concept" xlin:href="http://52north.github.io/wps-profileregistry/concept/generalization.html"/>
+      <ows:Metadata xlin:role="http://www.opengis.net/spec/wps/2.0/def/process-profile/generic" xlin:href="http://52north.github.io/wps-profileregistry/generic/line-generalization.html"/>
+      <ows:Metadata xlin:role="http://www.opengis.net/spec/wps/2.0/def/process/description/documentation" xlin:href="http://52north.github.io/wps-profileregistry/implementing/douglas-peucker.html"/>
+      <wps:Input minOccurs="1" maxOccurs="1">
+        <ows:Title>preserve_topology</ows:Title>
+        <ows:Identifier>preserve_topology</ows:Identifier>
+        <ows:Metadata xlin:role="http://www.opengis.net/spec/wps/2.0/def/process/description/documentation" xlin:href="http://52north.github.io/wps-profileregistry/implementing/douglas-peucker.html#preserve_topology"/>
+        <ns:LiteralData xmlns:ns="http://www.opengis.net/wps/2.0">
+          <ns:Format default="true" mimeType="text/plain"/>
+          <ns:Format mimeType="text/xml"/>
+          <LiteralDataDomain>
+            <ows:AnyValue/>
+            <ows:DataType ows:reference="xs:boolean"/>
+          </LiteralDataDomain>
+        </ns:LiteralData>
+      </wps:Input>
+      <wps:Input minOccurs="1" maxOccurs="1">
+        <ows:Title>tolerance</ows:Title>
+        <ows:Identifier>tolerance</ows:Identifier>
+        <ows:Metadata xlin:role="http://www.opengis.net/spec/wps/2.0/def/process/description/documentation" xlin:href="http://52north.github.io/wps-profileregistry/implementing/douglas-peucker.html#tolerance"/>
+        <ns:LiteralData xmlns:ns="http://www.opengis.net/wps/2.0">
+          <ns:Format default="true" mimeType="text/plain"/>
+          <ns:Format mimeType="text/xml"/>
+          <LiteralDataDomain>
+            <ows:AnyValue/>
+            <ows:DataType ows:reference="xs:double"/>
+          </LiteralDataDomain>
+        </ns:LiteralData>
+      </wps:Input>
+      <wps:Input minOccurs="1" maxOccurs="1">
+        <ows:Title>data</ows:Title>
+        <ows:Identifier>data</ows:Identifier>
+        <ows:Metadata xlin:role="http://www.opengis.net/spec/wps/2.0/def/process/description/documentation" xlin:href="http://52north.github.io/wps-profileregistry/implementing/douglas-peucker.html#data"/>
+        <ns:ComplexData xmlns:ns="http://www.opengis.net/wps/2.0">
+          <ns:Format default="true" mimeType="application/x-zipped-shp"/>
+          <ns:Format mimeType="application/x-zipped-shp" encoding="base64"/>
+          <ns:Format mimeType="text/xml; subtype=gml/3.1.1" schema="http://schemas.opengis.net/gml/3.1.1/base/feature.xsd"/>
+        </ns:ComplexData>
+      </wps:Input>
+      <wps:Output>
+        <ows:Title>result</ows:Title>
+        <ows:Identifier>result</ows:Identifier>
+        <ows:Metadata xlin:role="http://www.opengis.net/spec/wps/2.0/def/process/description/documentation" xlin:href="http://52north.github.io/wps-profileregistry/implementing/douglas-peucker.html#result"/>
+        <ns:ComplexData xmlns:ns="http://www.opengis.net/wps/2.0">
+          <ns:Format default="true" mimeType="application/x-zipped-shp"/>
+          <ns:Format mimeType="application/x-zipped-shp" encoding="base64"/>
+          <ns:Format mimeType="text/xml; subtype=gml/3.1.1" schema="http://schemas.opengis.net/gml/3.1.1/base/feature.xsd"/>
+        </ns:ComplexData>
+      </wps:Output>
+    </wps:Process>
+  </wps:ProcessOffering>
+</wps:ProcessOfferings>
