@@ -1,10 +1,26 @@
-= Conflation (GIS)
+=== Conflation
+Conflation, also known as map matching of merging is the process of combining two datasets based on a set of rules to produce a more complete dataset. One example is the combination of authorative data, e.g. TIGER road datafootnote:[https://www.census.gov/geo/maps-data/data/tiger-line.html] with crowd-sourced data, e.g. OpenStreetMapfootnote:[http://www.openstreetmap.org/]. The official data is collected with a high effort and follows strict requirements e.g. regarding data quality, which leads to a smaller frequency of updates. Crowd-sourced data on the other hand can be collected by virtually everyone e.g. by digitalizing streets from satelite imagery. The quality of the data is monitored by the community itself. Crowd-sourced data has therefore a high frequency of updates, with a trade of of having the danger of poor data quality for newly collected data. Several software systems exist to perform conflation tasks, e.g. the Roadmatcher software that was investigated in the OWS-9 testbed (see [1]). In Testbed-12 the Hootenanny conflation software was investigated regarding the feasibility for web-based conflation. The software is described in the following section.
 
-The following text is just a placeholder and will be rewritten.
+=== Hootenanny
+Hootenannyfootnote:[https://github.com/ngageoint/hootenanny] is an open source conflation tool. it features the automated and semi-automated conflation of polylines, polygons and points. It internally uses the OpenStreetMap data structure. Hootenanny software offers a command line interface. Also, a webapp is provided including a Web interface to visualize the data. A WPS 1.0.0 interface is also provided to enable web-based conflation.
+The following data formats are supported by Hootenanny (source https://github.com/ngageoint/hootenanny):
 
-[quote, "Longley, Paul A. et al (2001). Geographic Information Systems and Science. Wiley and Sons."]
-____
+__Import:__ Hootenanny can ingest from:
 
-"[i]n GIS, conflation is defined as the process of combining geographic information from overlapping sources so as to retain accurate data, minimize redundancy, and reconcile data conflicts."
-____
+*   Shapefile (.shp)
+*   OpenStreetMap (.osm)
+*   ESRI File Geodatabase (.gdb)
+*   .zip files containing shapefiles and/or .gdb files
+*   geonames.org (.geonames)
+*   OSM API database sources (MapEdit, etc.; experimental feature; see documentation for workflow)
 
+__Export:__ Hootenanny can export to: 
+
+*   Shapefile (.shp)
+*   OpenStreetMap (.osm)
+*   ESRI File Geodatabase (.gdb)
+*   Web Feature Service (WFS)
+*   OSM API database (MapEdit, etc.; experimental feature; see documentation for workflow)
+
+[1] Rieke, Matthes and Benjamin Pross,: OGC® OWS-9 Cross Community Interoperability (CCI)
+Conflation with Provenance Engineering Report. (2013).

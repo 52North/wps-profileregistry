@@ -5,7 +5,7 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.5.dev">
-<title>Cartographic generalization</title>
+<title>Generalization Techniques</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
@@ -422,77 +422,83 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="header">
 </div>
 <div id="content">
-<div class="sect1">
-<h2 id="truecartographic-generalization"><a class="anchor" href="#cartographic-generalization"></a>Cartographic generalization</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="truegeneralization-techniques"><a class="anchor" href="#truegeneralization-techniques"></a>Generalization Techniques</h3>
 <div class="paragraph">
-<p>The following text is just a placeholder and will be rewritten.</p>
+<p>Generalization in GIS is used to reduce the detail in data. With this reduction in detail, also the amount of data can be reduced, thus improving the usage in low bandwidth environments. [1] lists the following twelve categories of operators for cartographic generalization:</p>
 </div>
-<div class="quoteblock">
-<blockquote>
-<div class="paragraph">
-<p>Cartographic generalization, or map generalization, is the method whereby information is selected and represented on a map in a way that adapts to the scale of the display medium of the map, not necessarily preserving all intricate geographical or other cartographic details. The cartographer is given license to adjust the content within their maps to create a suitable and useful map that conveys geospatial information, while striking the right balance between the map&#8217;s purpose and actuality of the subject being mapped. Scaling hierarchy or far smaller than larger ones is found to be a universal rule for cartographic generalization (1).</p>
+<div id="generalization-operators" class="imageblock">
+<div class="content">
+<img src="includes/images/generalization-operators.png" alt="generalization operators.png">
 </div>
-<div class="paragraph">
-<p>Well generalized maps are those that emphasize the most important map elements while still representing the world in the most faithful and recognizable way. The level of detail and importance in what is remaining on the map must outweigh the insignificance of items that were generalized, as to preserve the distinguishing characteristics of what makes the map useful and important.</p>
+<div class="title">Figure 1. Twelve categories of generalization operators. (source [1])</div>
 </div>
 <div class="paragraph">
-<p>Methods</p>
+<p>Examples for the twelve operators are shown in the following image:</p>
+</div>
+<div id="generalization_examples" class="imageblock">
+<div class="content">
+<img src="includes/images/generalization-examples.png" alt="generalization examples.png">
+</div>
+<div class="title">Figure 2. Sample spatial and attribute transformations of cartographic generalization. (source [1])</div>
 </div>
 <div class="paragraph">
-<p>Some cartographic generalization methods include the following:</p>
+<p>There are three types of geometry for that generalization techniques will be investigated in this ER: point, line and polygon. Several techniques can be applied to each of the geometry types. We chose to investigate the following operations further:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Aggregation/Merging: A digitized representation of a map feature should be accurate in its
+representation of the feature (shape, location, and character), yet also efficient in
+terms of retaining the least number of data points necessary to represent the
+character. A profligate density of coordinates captured in the digitization stage
+should be reduced by selecting a subset of the original coordinate pairs, while
+retaining those points considered to be most representative of the line (Jenks, 1981).
+Glitches should also be removed. Simplification operators will select the
+characteristic, or shape-describing, points to retain, or will reject the redundant point
+considered to be unnecessary to display the line&#8217;s character. Simplification operators
+produce a reduction in the number of derived data points which are unchanged in
+their x,y coordinate positions. Some practical considerations of simplification
+includes reduced plotting time, increased line crispness due to higher plotting
+speeds, reduced storage, less problems in attaining plotter resolution due to scale
+change, and quicker vector to raster conversion (see [2]).</p>
+</li>
+<li>
+<p>Simplification: There are many instances when the number or density of like point
+features within a region prohibits each from being portrayed and symbolized
+individually within the graphic. This notwithstanding, from the perspective of the
+map&#8217;s purpose, the importance of those features requires that they still be portrayed.
+To accomplish that goal, the point features must be aggregated into a higher order
+class feature areas and symbolized as such. For example, if the intervening spaces
+between houses are smaller than the physical extent of the buildings themselves, the
+buildings can be aggregated and resymbolized as built-up areas (see [3]).</p>
+</li>
+<li>
+<p>Refinement/Elimination: In many cases, where like features are either too numerous or too small to show to scale, no attempt should be made to show all the features. Instead, a selective number and pattern of the symbols are depicted. Generally, this is accomplished by leaving out the smallest features, or those which add little to the general impression of the distribution. Though the overall initial features are thinned out, the general pattern of the features is maintained with those features that are chosen by showing them in their correct locations. Excellent examples of this can be found in [4]. This refinement process retains the general characteristics of the features at a greatly reduced complexity.</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
-<p>Selection</p>
+<p>[1] Shea, S. K., and McMaster, R. B.: Cartographic generalization in a digital environment: When and how to generalize, Proceedings of AutoCarto, Vol. 9. (1989)</p>
 </div>
 <div class="paragraph">
-<p>Map generalization is designed to reduce the complexities of the real world by strategically reducing ancillary and unnecessary details. One way that geospatial data can be reduced is through the selection process. The cartographer can select and retain certain elements that he/she deems the most necessary or appropriate. In this method, the most important elements stand out while lesser elements are left out entirely. For example, a directional map between two points may have lesser and un-traveled roadways omitted as not to confuse the map-reader. The selection of the most direct and uncomplicated route between the two points is the most important data, and the cartographer may choose to emphasize this.</p>
+<p>[2] McMaster, R. B.: Automated Line Generalization,
+Cartographica, 24(2), pp. 74-lll  (1987)</p>
 </div>
 <div class="paragraph">
-<p>Simplification</p>
+<p>[3] Keates, J.S.: Cartographic Design and Production (1973)</p>
 </div>
 <div class="paragraph">
-<p>Generalization is not a process that only removes and selects data, but also a process that simplifies it as well. Simplification is a technique where shapes of retained features are altered to enhance visibility and reduce complexity. Smaller scale maps have more simplified features than larger scale maps because they simply exhibit more area. An example of simplification is to scale and remove points along an area. Doing this to a mountain would reduce the detail in and around the mountain but would ideally not detract from the map reader interpreting the feature as such a mountain.</p>
-</div>
-<div class="paragraph">
-<p>Combination</p>
-</div>
-<div class="paragraph">
-<p>Simplification also takes on other roles when considering the role of combination. Overall data reduction techniques can also mean that in addition to generalizing elements of particular features, features can also be combined when their separation is irrelevant to the map focus. A mountain chain may be isolated into several smaller ridges and peaks with intermittent forest in the natural environment, but shown as a continuous chain on the map, as determined by scale. The map reader has to, again remember, that because of scale limitations combined elements are not concise depictions of natural or manmade features.</p>
-</div>
-<div class="paragraph">
-<p>Smoothing</p>
-</div>
-<div class="paragraph">
-<p>Smoothing is also a process that the map maker can employ to reduce the angularity of line work. Smoothing is yet another way of simplifying the map features, but involves several other characteristics of generalization that lead into feature displacement and locational shifting. The purpose of smoothing is to exhibit linework in a much less complicated and a less visually jarring way. An example of smoothing would be for a jagged roadway, cut through a mountain, to be smoothed out so that the angular turns and transitions appear much more fluid and natural.</p>
-</div>
-<div class="paragraph">
-<p>Enhancement</p>
-</div>
-<div class="paragraph">
-<p>Enhancement is also a method that can be employed by the cartographer to illuminate specific elements that aid in map reading. As many of the aforementioned generalizing methods focus on the reduction and omission of detail, the enhancement method concentrates on the addition of detail. Enhancement can be used to show the true character of the feature being represented and is often used by the cartographer to highlight specific details about his or her specific knowledge, that would otherwise be left out. An example includes enhancing the detail about specific river rapids so that the map reader may know the facets of traversing the most difficult sections beforehand. Enhancement can be a valuable tool in aiding the map reader to elements that carry significant weight to the map’s intent.</p>
-</div>
-<div class="paragraph">
-<p>Displacement</p>
-</div>
-<div class="paragraph">
-<p>Displacement can be employed when 2 objects are so close to each other that they would overlap at smaller scales. A common place where this would occur is the cities Brazzaville and Kinshasa on either side of the Congo river in Africa. They are both the capital city of their country and on overview maps they would be displayed with a slightly larger symbol than other cities. Depending on the scale of the map the symbols would overlap. By displacing both of them away from the river (and away from their true location) the symbol overlap can be avoided. Another common case is when a road and a railroad run parallel to each other.</p>
-</div>
-</blockquote>
-<div class="attribution">
-&#8212; Wikipedia<br>
-<cite>https://en.wikipedia.org/wiki/Cartographic_generalization</cite>
-</div>
-</div>
-<div class="paragraph">
-<p>(1) Jiang, B. Liu, X. &amp; Jia, T. (2013). Scaling of geographic space as a universal rule for map generalization. Annals of the Association of American Geographers, 4, 844-855.</p>
-</div>
+<p>[4] Swiss Society of Cartography: Cartographic Generalization,
+Cartographic Publication Series, No. 2. (1977) English translation by Allan
+Brown and Arie Kers, ITC Cartography Department, Enschede,
+Netherlands)</p>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2016-06-30 15:39:19 MS
+Last updated 2016-12-12 10:47:38 MZ
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/github.min.css">
